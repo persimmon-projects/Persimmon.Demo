@@ -1,4 +1,4 @@
-# Persimmon,Demo
+# Persimmon.Demo
 
 This project is sample project using Persimmon.
 

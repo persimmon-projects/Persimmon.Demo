@@ -13,7 +13,7 @@ git clone https://github.com/persimmon-projects/Persimmon.Demo
 ### install Persimmon.Console
 
 ```
-.\.nuget\NuGet.exe Install Persimmon.Console -Pre -OutputDirectory tools
+.\.nuget\NuGet.exe Install Persimmon.Console -Pre -OutputDirectory tools -ExcludeVersion
 ```
 
 ### build Persimmon.Demo
@@ -29,5 +29,5 @@ or use IDE.
 ### run tests
 
 ```
-.\tools\Persimmon.Console.1.0.0-beta1\tools\Persimmon.Console.exe .\Persimmon.Demo\bin\Debug\Persimmon.Demo.dll
+.\tools\Persimmon.Console\tools\Persimmon.Console.exe .\Persimmon.Demo\bin\Debug\Persimmon.Demo.dll
 ```

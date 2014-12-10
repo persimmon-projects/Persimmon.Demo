@@ -31,3 +31,7 @@ or use IDE.
 ```
 .\tools\Persimmon.Console\tools\Persimmon.Console.exe .\Persimmon.Demo\bin\Debug\Persimmon.Demo.dll
 ```
+
+## Contributors
+
+The poker example was implemented by @nenono and @bleis-tift.

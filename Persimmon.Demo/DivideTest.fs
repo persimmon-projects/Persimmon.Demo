@@ -13,5 +13,5 @@ module DivideTest =
 
   let ``exception test example`` = test "exception test example" {
     let! e = trap { it (divide 3 0) }
-    do! assertEquals  typeof<ArithmeticException> (e.GetType())
+    do! assertEquals  typeof<DivideByZeroException> (e.GetType())
   }

@@ -12,9 +12,6 @@ module FizzBuzzTest =
     | _ -> string n
 
   let ``parameterize example`` =
-    let testFizzBuzz (n, expected) = test "fizz buzz test" {
-      do! assertEquals expected (fizzbuzz n)
-    }
     parameterize {
       case (1, "1")
       case (2, "2")
@@ -30,6 +27,8 @@ module FizzBuzzTest =
       case (12, "Fizz")
       case (13, "13")
       case (14, "14")
-      case (15, "FizzBuzz")
-      run testFizzBuzz
+      case (15, "FizzBuzz") into (n, expected)
+      run (test "fizz buzz test" {
+        do! assertEquals expected (fizzbuzz n)
+      })
     }

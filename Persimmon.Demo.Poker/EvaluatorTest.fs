@@ -95,10 +95,9 @@ module EvaluatorTest =
     List.zip hands rank
 
   let ``parameterize poker test`` =
-    let inner (input, expected) = test "parameterize poker test" {
-      do! assertEquals expected (Evaluator.evaluate input)
-    }
     parameterize {
-      source pokerHands
-      run inner
+      source pokerHands into (input, expected)
+      run (test "parameterize poker test" {
+        do! assertEquals expected (Evaluator.evaluate input)
+      })
     }

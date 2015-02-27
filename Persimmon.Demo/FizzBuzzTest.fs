@@ -27,8 +27,8 @@ module FizzBuzzTest =
       case (12, "Fizz")
       case (13, "13")
       case (14, "14")
-      case (15, "FizzBuzz") into (n, expected)
-      run (test "fizz buzz test" {
+      case (15, "FizzBuzz")
+      run (fun (n, expected) -> test "fizz buzz test" {
         do! assertEquals expected (fizzbuzz n)
       })
     }

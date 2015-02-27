@@ -96,8 +96,8 @@ module EvaluatorTest =
 
   let ``parameterize poker test`` =
     parameterize {
-      source pokerHands into (input, expected)
-      run (test "parameterize poker test" {
+      source pokerHands
+      run (fun (input, expected) -> test "parameterize poker test" {
         do! assertEquals expected (Evaluator.evaluate input)
       })
     }

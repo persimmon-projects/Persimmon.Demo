@@ -32,6 +32,23 @@ or use IDE.
 .\tools\Persimmon.Console\tools\Persimmon.Console.exe .\Persimmon.Demo\bin\Debug\Persimmon.Demo.dll
 ```
 
+## use FAKE
+
+Install FAKE, FAKE.Persimmon, and other dependency libraries
+
+```
+.\.nuget\NuGet.exe Install FAKE -Version 3.31.2 -OutputDirectory packages -ExcludeVersion
+.\.nuget\NuGet.exe Install FAKE.Persimmon -Pre -Version 1.0.0-beta1 -OutputDirectory packages -ExcludeVersion
+.\.nuget\NuGet.exe Install Persimmon.Console -Pre -OutputDirectory tools -ExcludeVersion
+.\.nuget\NuGet.exe restore Persimmon.Demo.sln
+```
+
+and run.
+
+```
+packages/FAKE/tools/FAKE.exe build.fsx
+```
+
 ## Contributors
 
 The poker example was implemented by @nenono and @bleis-tift.

@@ -187,4 +187,4 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
-
+.fake/

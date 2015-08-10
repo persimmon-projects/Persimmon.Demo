@@ -37,8 +37,8 @@ or use IDE.
 Install FAKE, FAKE.Persimmon, and other dependency libraries
 
 ```
-.\.nuget\NuGet.exe Install FAKE -Version 3.31.2 -OutputDirectory packages -ExcludeVersion
-.\.nuget\NuGet.exe Install FAKE.Persimmon -Pre -Version 1.0.0-beta1 -OutputDirectory packages -ExcludeVersion
+.\.nuget\NuGet.exe Install FAKE -Version 4.1.0 -OutputDirectory packages -ExcludeVersion
+.\.nuget\NuGet.exe Install FAKE.Persimmon -Pre -Version 1.0.0-beta3 -OutputDirectory packages -ExcludeVersion
 .\.nuget\NuGet.exe Install Persimmon.Console -Pre -OutputDirectory tools -ExcludeVersion
 .\.nuget\NuGet.exe restore Persimmon.Demo.sln
 ```

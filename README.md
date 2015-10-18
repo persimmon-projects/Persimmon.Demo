@@ -15,7 +15,7 @@ git clone https://github.com/persimmon-projects/Persimmon.Demo
 ### install Persimmon.Console
 
 ```
-.\.nuget\NuGet.exe Install Persimmon.Console -Pre -OutputDirectory tools -ExcludeVersion
+.\.nuget\NuGet.exe Install Persimmon.Console -OutputDirectory packages -ExcludeVersion
 ```
 
 ### build Persimmon.Demo
@@ -31,7 +31,7 @@ or use IDE.
 ### run tests
 
 ```
-.\tools\Persimmon.Console\tools\Persimmon.Console.exe .\Persimmon.Demo\bin\Debug\Persimmon.Demo.dll
+.\tools\Persimmon.Console\packages\Persimmon.Console.exe .\Persimmon.Demo\bin\Debug\Persimmon.Demo.dll
 ```
 
 ## use FAKE
@@ -39,16 +39,16 @@ or use IDE.
 Install FAKE, FAKE.Persimmon, and other dependency libraries
 
 ```
-.\.nuget\NuGet.exe Install FAKE -Version 4.1.0 -OutputDirectory packages -ExcludeVersion
-.\.nuget\NuGet.exe Install FAKE.Persimmon -Pre -Version 1.0.0-beta3 -OutputDirectory packages -ExcludeVersion
-.\.nuget\NuGet.exe Install Persimmon.Console -Pre -OutputDirectory tools -ExcludeVersion
+.\.nuget\NuGet.exe Install FAKE -OutputDirectory packages -ExcludeVersion
+.\.nuget\NuGet.exe Install FAKE.Persimmon -OutputDirectory packages -ExcludeVersion
+.\.nuget\NuGet.exe Install Persimmon.Console -OutputDirectory packages -ExcludeVersion
 .\.nuget\NuGet.exe restore Persimmon.Demo.sln
 ```
 
 and run.
 
 ```
-packages/FAKE/tools/FAKE.exe build.fsx
+packages/FAKE/packages/FAKE.exe build.fsx
 ```
 
 ## Contributors

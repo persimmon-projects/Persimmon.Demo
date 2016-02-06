@@ -48,7 +48,7 @@ Install FAKE, FAKE.Persimmon, and other dependency libraries
 and run.
 
 ```
-packages/FAKE/packages/FAKE.exe build.fsx
+packages/FAKE/tools/FAKE.exe build.fsx
 ```
 
 ## Contributors

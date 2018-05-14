@@ -1,40 +1,42 @@
-// --------------------------------------------------------------------------------------
-// FAKE build script
-// --------------------------------------------------------------------------------------
-
-#r @"packages/FAKE/tools/FakeLib.dll"
-#r @"packages/FAKE.Persimmon/lib/net451/FAKE.Persimmon.dll"
+#r @"packages/build/FAKE/tools/FakeLib.dll"
+#r @"packages/build/FAKE.Persimmon/lib/net451/FAKE.Persimmon.dll"
 open Fake
 
 let solutionFile  = "Persimmon.Demo.sln"
 
-let testAssemblies = "./**/bin/Release/*Demo*.dll"
+let testAssemblies = "./tests/**/bin/Release/*Demo*.dll"
 
-// Copies binaries from default VS location to exepcted bin folder
-// But keeps a subdirectory structure for each project in the
-// src folder to support multiple project outputs
 Target "CopyBinaries" (fun _ ->
-    !! "src/**/*.??proj"
-    |>  Seq.map (fun f -> ((System.IO.Path.GetDirectoryName f) @@ "bin/Release", "bin" @@ (System.IO.Path.GetFileNameWithoutExtension f)))
-    |>  Seq.iter (fun (fromDir, toDir) -> CopyDir toDir fromDir (fun _ -> true))
+  !! "src/**/*.??proj"
+  |>  Seq.map (fun f -> ((System.IO.Path.GetDirectoryName f) @@ "bin/Release", "bin" @@ (System.IO.Path.GetFileNameWithoutExtension f)))
+  |>  Seq.iter (fun (fromDir, toDir) -> CopyDir toDir fromDir (fun _ -> true))
 )
 
 Target "Clean" (fun _ ->
-    CleanDirs ["bin"; "temp"]
+  CleanDirs ["bin"; "temp"]
+)
+
+Target "Restore" (fun _ ->
+  DotNetCli.Restore (fun p ->
+    { p with
+        Project = solutionFile
+    }
+  )
 )
 
 Target "Build" (fun _ ->
-    !! solutionFile
-    |> MSBuildRelease "" "Rebuild"
-    |> ignore
+  !! solutionFile
+  |> MSBuildRelease "" "Rebuild"
+  |> ignore
 )
 
 Target "RunTests" (fun _ ->
-    !! testAssemblies
-    |> Persimmon id
+  !! testAssemblies
+  |> Persimmon id
 )
 
 "Clean"
+  ==> "Restore"
   ==> "Build"
   ==> "CopyBinaries"
   ==> "RunTests"

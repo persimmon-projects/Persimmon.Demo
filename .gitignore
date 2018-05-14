@@ -188,3 +188,6 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 .fake/
+packages/
+.DS_Store
+paket-files/

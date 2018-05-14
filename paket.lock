@@ -1,0 +1,12 @@
+
+
+GROUP Build
+RESTRICTION: == net451
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    FAKE (4.64.13)
+    FAKE.Lib (4.64.13)
+    FAKE.Persimmon (1.0.4)
+      FAKE.Lib (>= 4.1)
+      Persimmon.Console (>= 1.0.2)
+    Persimmon.Console (4.0)

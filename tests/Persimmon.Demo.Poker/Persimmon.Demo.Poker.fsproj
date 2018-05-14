@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="List.fs" />
+    <Compile Include="Card.fs" />
+    <Compile Include="Deck.fs" />
+    <Compile Include="Hand.fs" />
+    <Compile Include="Rank.fs" />
+    <Compile Include="Evaluation.fs" />
+    <Compile Include="Evaluator.fs" />
+<Compile Include="EvaluatorTest.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Persimmon" Version="4.0.0" />
+  </ItemGroup>
+</Project>

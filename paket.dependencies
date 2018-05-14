@@ -1,0 +1,8 @@
+
+group Build
+  framework: net451
+  source https://api.nuget.org/v3/index.json
+
+  nuget FAKE
+  nuget FAKE.Persimmon
+

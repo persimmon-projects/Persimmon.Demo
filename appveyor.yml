@@ -1,5 +1,7 @@
 version: 1.0.{build}
 
+os: Visual Studio 2017
+
 branches:
   except:
     - gh-pages
@@ -11,8 +13,7 @@ skip_commits:
 
 clone_depth: 50
 
-configuration:
-  - Release
-
 test: off
 
+build_script:
+- cmd: build.cmd

@@ -16,4 +16,4 @@ clone_depth: 50
 test: off
 
 build_script:
-- ps1: .\RunTests.ps1
+- ps: .\RunTests.ps1

@@ -191,3 +191,4 @@ FakesAssemblies/
 packages/
 .DS_Store
 paket-files/
+paket.exe

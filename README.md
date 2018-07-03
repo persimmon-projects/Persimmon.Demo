@@ -6,17 +6,18 @@ This project is sample project using Persimmon.
 
 ## How to run tests
 
-Install Paket, FAKE, FAKE.Persimmon, and other dependency libraries:
+Install Paket and other dependency libraries:
 
 ```
 ./.paket.bootstrap.exe
 ./.paket.exe restore
 ```
 
-and run:
+And run tests:
 
 ```
-packages/build/FAKE/tools/FAKE.exe build.fsx
+dotnet test .\tests\Persimmon.Demo\Persimmon.Demo.fsproj
+dotnet test .\tests\Persimmon.Demo.Poker\Persimmon.Demo.Poker.fsproj
 ```
 
 ## Contributors

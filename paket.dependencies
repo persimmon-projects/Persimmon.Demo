@@ -1,8 +1,7 @@
+framework: net451
+source https://api.nuget.org/v3/index.json
 
-group Build
-  framework: net451
-  source https://api.nuget.org/v3/index.json
-
-  nuget FAKE
-  nuget FAKE.Persimmon
-
+nuget FSharp.Core
+nuget Microsoft.NET.Test.Sdk
+nuget Persimmon
+nuget Persimmon.TestAdapter

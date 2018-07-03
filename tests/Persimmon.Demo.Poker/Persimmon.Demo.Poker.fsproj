@@ -1,9 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net451</TargetFramework>
     <IsPackable>false</IsPackable>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app.config" />
     <Compile Include="List.fs" />
     <Compile Include="Card.fs" />
     <Compile Include="Deck.fs" />
@@ -11,10 +14,7 @@
     <Compile Include="Rank.fs" />
     <Compile Include="Evaluation.fs" />
     <Compile Include="Evaluator.fs" />
-<Compile Include="EvaluatorTest.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="EvaluatorTest.fs" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Persimmon" Version="4.0.0" />
-  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

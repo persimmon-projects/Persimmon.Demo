@@ -1,4 +1,4 @@
-version: 1.0.{build}
+version: 4.0.{build}
 
 os: Visual Studio 2017
 
@@ -16,6 +16,4 @@ clone_depth: 50
 test: off
 
 build_script:
-- cmd: ./.paket/paket.bootstrap.exe
-- cmd: ./.paket/paket.exe restore
-- cmd: ./packages/build/FAKE/tools/FAKE.exe build.fsx
+- ps1: .\RunTests.ps1
